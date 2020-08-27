@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewController.ModifyProductController">
+   <children>
+      <VBox layoutX="10.0" layoutY="10.0" prefWidth="800.0">
+         <effect>
+            <ColorAdjust brightness="-0.08" hue="-0.08" />
+         </effect>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="140.0">
+         <children>
+            <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="Modify Product">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+         </children>
+      </VBox>
+      <GridPane alignment="CENTER" layoutX="28.0" layoutY="66.0" prefHeight="350.0" prefWidth="300.0">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="70.20001220703125" minWidth="10.0" prefWidth="60.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="130.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="82.4000244140625" minWidth="10.0" prefWidth="45.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <TextField fx:id="ModifyProductId" disable="true" editable="false" promptText="Auto Gen- Disabled" GridPane.columnIndex="1" />
+            <TextField fx:id="ModProdNameStr" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="ModProdInventoryInt" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="ModProdPriceDbl" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="ModProdMaxInt" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="ModProdMinInt" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Label text="ID" />
+            <Label text="Name" GridPane.rowIndex="1" />
+            <Label text="Inventory" GridPane.rowIndex="2" />
+            <Label text="Price" GridPane.rowIndex="3" />
+            <Label text="Max" GridPane.rowIndex="4" />
+            <Label text="Min" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <VBox layoutX="396.0" layoutY="66.0" prefHeight="120.0" prefWidth="400.0">
+         <children>
+            <TableView fx:id="TableView1" prefHeight="200.0" prefWidth="200.0">
+               <columns>
+                  <TableColumn fx:id="ModProdIdColumn1" prefWidth="100.0" text="Part ID" />
+                  <TableColumn fx:id="ModProdNameColumn1" prefWidth="100.0" text="Part Name" />
+                  <TableColumn fx:id="ModProdInvColumn1" prefWidth="100.0" text="Inventory" />
+                  <TableColumn fx:id="ModProdPriceColumn1" prefWidth="100.0" text="Price Per Unit" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <VBox layoutX="396.0" layoutY="241.0" prefHeight="120.0" prefWidth="400.0">
+         <children>
+            <TableView fx:id="TableView2" prefHeight="200.0" prefWidth="200.0">
+               <columns>
+                  <TableColumn fx:id="ModProdIdColumn2" prefWidth="100.0" text="Part ID" />
+                  <TableColumn fx:id="ModProdNameColumn2" prefWidth="100.0" text="Part Name" />
+                  <TableColumn fx:id="ModProdInvColumn2" prefWidth="100.0" text="Inventory" />
+                  <TableColumn fx:id="ModProdPriceColumn2" prefWidth="100.0" text="Price Per Unit" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_RIGHT" layoutX="726.0" layoutY="186.0" prefHeight="23.0" prefWidth="70.0">
+         <children>
+            <Button fx:id="addProductBtn" mnemonicParsing="false" onAction="#onActionAddPart" text="Add">
+               <VBox.margin>
+                  <Insets right="10.0" />
+               </VBox.margin></Button>
+         </children>
+         <padding>
+            <Insets right="10.0" top="5.0" />
+         </padding>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="679.0" layoutY="361.0" prefHeight="40.0" prefWidth="132.0">
+         <children>
+            <Button fx:id="deleteProductBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionDeletePart" text="Delete">
+               <VBox.margin>
+                  <Insets right="10.0" />
+               </VBox.margin></Button>
+         </children>
+         <padding>
+            <Insets right="10.0" top="5.0" />
+         </padding>
+      </VBox>
+      <VBox layoutX="618.0" layoutY="404.0" prefHeight="23.0" prefWidth="70.0">
+         <children>
+            <Button fx:id="cancelProduct" mnemonicParsing="false" onAction="#onActionDisplayMainScreen" text="Cancel" />
+         </children>
+      </VBox>
+      <VBox layoutX="555.0" layoutY="404.0" prefHeight="23.0" prefWidth="70.0">
+         <children>
+            <Button fx:id="saveProductBtn" mnemonicParsing="false" onAction="#onActionSaveProduct" text="Save" />
+         </children>
+      </VBox>
+      <VBox alignment="TOP_RIGHT" layoutX="405.0" layoutY="32.0" prefHeight="23.0" prefWidth="70.0">
+         <children>
+            <Button fx:id="searchProductBtn" mnemonicParsing="false" onAction="#onActionSearchProduct" text="Search" />
+         </children>
+      </VBox>
+      <VBox alignment="BOTTOM_CENTER" layoutX="505.0" layoutY="24.0" prefHeight="30.0" prefWidth="225.0">
+         <children>
+            <TextField fx:id="ModProdSearch" alignment="BOTTOM_CENTER" prefHeight="25.0" prefWidth="226.0" promptText="Search by Part ID or Name" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewController.AddPartController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="420.0">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="420.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Add Part" textFill="BLUE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="320.0">
+                     <children>
+                        <RadioButton fx:id="InHouseRadio" mnemonicParsing="false" onAction="#SetInOut" text="In-House">
+                           <padding>
+                              <Insets right="30.0" />
+                           </padding>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="inHouseOrOutsourcedTG" />
+                           </toggleGroup>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="OutsourcedRadio" mnemonicParsing="false" onAction="#SetInOut" selected="true" text="Outsourced" toggleGroup="$inHouseOrOutsourcedTG">
+                           <font>
+                              <Font size="14.0" />
+                           </font></RadioButton>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <GridPane prefHeight="240.0" prefWidth="420.0" vgap="10.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="173.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.0" minWidth="10.0" prefWidth="247.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Part ID">
+                           <GridPane.margin>
+                              <Insets left="60.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Name" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="60.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Inventory" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="60.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Price/Cost" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="60.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="AddPartId" disable="true" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Auto Gen- Disabled" GridPane.columnIndex="1" />
+                        <TextField fx:id="AddPartName" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Part Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="AddInventory" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Inventory Total" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="AddPrice" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Price/Cost per Unit" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+            <HBox prefHeight="46.0" prefWidth="467.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="139.0">
+                     <children>
+                        <Label text="Max">
+                           <VBox.margin>
+                              <Insets left="60.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="34.0" prefWidth="107.0">
+                     <children>
+                        <TextField fx:id="MaxQty" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Max" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="29.0">
+                     <children>
+                        <Label text="Min">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding></Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField fx:id="MinQty" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Min">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin></TextField>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </HBox>
+            <HBox fx:id="containerCompMach" prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="175.0">
+                     <children>
+                        <Label fx:id="LabelCompanyName" text="Company Name">
+                           <VBox.margin>
+                              <Insets left="60.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="245.0">
+                     <children>
+                        <TextField fx:id="CompNameMachID" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Company Name" />
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_RIGHT" layoutX="28.0" layoutY="387.0" prefHeight="58.0" prefWidth="472.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onActionSavePart" text="Save">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onActionDisplayMainScreen" text="Cancel">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
